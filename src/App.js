@@ -5,6 +5,8 @@ import ItemListContainer from "./conteiner/ItemListContainer";
 
 
 function App() {
+
+
   return (
     <>
     <NavBar/>
@@ -13,6 +15,8 @@ function App() {
     </div>
 
     <ItemListContainer greeting={"Bienvenido a nuestra tienda"}/>
+    
+    
     </>
   );
   
