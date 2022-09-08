@@ -14,7 +14,7 @@ function App() {
   
     </div>
 
-    <ItemListContainer greeting={"Bienvenido a nuestra tienda"}/>
+    <ItemListContainer greeting={"Nuestros productos"}/>
     
     
     </>
