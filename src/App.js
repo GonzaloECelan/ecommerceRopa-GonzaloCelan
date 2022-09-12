@@ -1,7 +1,8 @@
 import "./app.css";
 import "./components/NavBar";
 import { NavBar } from "./components/NavBar";
-import ItemListContainer from "./conteiner/ItemListContainer";
+// import ItemListContainer from "./conteiner/ItemListContainer";
+import ItemDetailContainer from "./conteiner/ItemListContainer/ItemDetailContainer";
 
 
 function App() {
@@ -10,15 +11,14 @@ function App() {
   return (
     <>
     <NavBar/>
-    <div className="App">
-  
-    </div>
-
-    <ItemListContainer greeting={"Nuestros productos"}/>
     
+
+    {/* <ItemListContainer greeting={"Nuestros productos"}/> */}
+    
+    <ItemDetailContainer/>
     
     </>
-  );
+  )
   
 }
 
