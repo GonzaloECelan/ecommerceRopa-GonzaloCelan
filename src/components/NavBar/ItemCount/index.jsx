@@ -4,7 +4,7 @@ import './style.css';
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [cantidad, setCantidad] = useState(initial);
+    const [cantidad, setCantidad] = useState(0);
     
     const eventClickmas = (e) => {
       if(cantidad < stock){
@@ -16,10 +16,14 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
       }
       const eventClickmenos = (e) => {
-        if(cantidad > 1){
+        if(cantidad > initial){
           setCantidad(cantidad - 1)};
         }
       
+      const addCart = () =>{
+        onAdd(cantidad);
+        setCantidad(initial);
+      }
 
 
             useEffect(()=>{
@@ -30,16 +34,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
   return (
     
     <div className='tarjeta'>
-      <div className='imgProducto'>
-        
-
-      </div>
       <div className='contador'>
         <span className='mas' onClick={eventClickmas}>+</span>
         <span className='cant'>{cantidad}</span>
         <span className='menos' onClick={eventClickmenos}>-</span>
         </div>
-        <button onClick={()=>onAdd(cantidad)}>Agregar al carrito</button>
+        <button onClick={addCart}>Agregar al carrito</button>
         
     </div>
     
