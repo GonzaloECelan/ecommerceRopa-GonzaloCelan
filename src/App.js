@@ -10,12 +10,15 @@ import {
   Route,
 } from "react-router-dom";
 import Cart from "./conteiner/ItemListContainer/Cart";
+import ShopProvides from "./contex/ShopProvides";
 
 
 function App() {
 
 
   return (
+<ShopProvides>
+
 
     <BrowserRouter>
 
@@ -28,12 +31,9 @@ function App() {
     <Route path="/cart" element={<Cart/>}/>
         
     </Routes>
-    
-
-    
-
-    
     </BrowserRouter>
+
+</ShopProvides>
   )
   
 }

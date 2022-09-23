@@ -46,7 +46,7 @@ useEffect(()=>{
     
         })()
 
-},[categoryId])
+},[])
   return (
     <div className='itemlist'>
         <h1>{greeting}</h1>

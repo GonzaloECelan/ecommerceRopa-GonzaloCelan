@@ -28,7 +28,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
             useEffect(()=>{
 
-              console.log("se sumo uno");
+              // console.log("se sumo uno");
 },[cantidad]);
 
   return (
