@@ -33,10 +33,10 @@ setQty(quantity);
 <div className='detail'>
   <h2>{product.category}</h2>
 <div className='detail-img'>
-  <img src={product.image} alt="" />
+  <img src={product.img} alt="" />
 </div>
   <div className='detail-inf'>
-    <span className='title'>{product.title}</span>
+    <span className='title'>{product.tittle}</span>
     <span className='price'>${product.price}</span>
     <span className='more'>MAS VENDIDO</span>
     <span className='stock'>Stock disponible</span>

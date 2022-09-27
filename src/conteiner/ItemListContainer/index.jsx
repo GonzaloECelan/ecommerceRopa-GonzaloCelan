@@ -2,9 +2,9 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import ItemList from '../../components/ItemList';
 import { useParams } from 'react-router-dom';
-
+import { collection, query, where, getDocs } from "firebase/firestore";
 import "./style.css";
-
+import { db } from '../../firebase/config';
 
 const ItemListContainer = ({greeting}) => {
 
@@ -25,19 +25,24 @@ useEffect(()=>{
         })
         
         try {
-            if (categoryId){
-                const response = await fetch( `https://fakestoreapi.com/products/category/${categoryId} `);
-                const productos = await response.json();
-                setProductos(productos);
-            }
-            else{
-                const response = await fetch( "https://fakestoreapi.com/products");
-                const productos = await response.json();
-                setProductos(productos);
-            }
+          
 
+          const q = categoryId ? query(collection(db, "Products"), where("category", "==", categoryId)) : query(collection(db, "Products")) ;
+          
+          const querySnapshot = await getDocs(q);
+          const productosFirebase = [];
+
+          querySnapshot.forEach((doc) => {
             
-            } catch (error) {
+            console.log(doc.id, " => ", doc.data());
+            productosFirebase.push({id: doc.id, ...doc.data()});
+          });
+
+          console.log(productosFirebase);
+          setProductos(productosFirebase);
+
+
+        } catch (error) {
                 console.log(error);
         }
         
@@ -46,7 +51,9 @@ useEffect(()=>{
     
         })()
 
-},[])
+},[categoryId])
+
+
   return (
     <div className='itemlist'>
         <h1>{greeting}</h1>

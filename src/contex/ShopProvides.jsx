@@ -42,10 +42,20 @@ const ShopProvides = ({children}) => {
 
     }
 
+    const removeItem = (itemToRemove)=>{
+        const filterProducts = cart.filter(item => item !== itemToRemove);
+        setCart(filterProducts);
+
+    }
+
+    const clearCart = ()=>{
+        setCart([]);
+    }
+
    
 
   return (
-    <Shop.Provider value={{cart, addItem}}>
+    <Shop.Provider value={{cart, addItem, removeItem, clearCart}}>
         {children}
     </Shop.Provider>
   )
