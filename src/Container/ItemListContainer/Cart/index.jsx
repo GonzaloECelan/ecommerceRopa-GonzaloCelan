@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
-import { Shop } from '../../../contex/ShopProvides';
+import { Shop } from '../../../Context/ShopProvides';
 import { DataGrid } from '@mui/x-data-grid';
 
 

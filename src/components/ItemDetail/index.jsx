@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ItemCount from '../NavBar/ItemCount';
 import './style.css';
-import { Shop } from '../../contex/ShopProvides';
+import { Shop } from '../../Context/ShopProvides';
 
 const ItemDetail = ({product}) => {
 

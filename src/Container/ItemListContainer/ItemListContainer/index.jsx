@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import ItemList from '../../components/ItemList';
+import ItemList from '../../../components/ItemList';
 import { useParams } from 'react-router-dom';
 import { collection, query, where, getDocs } from "firebase/firestore";
 import "./style.css";
-import { db } from '../../firebase/config';
+import { db } from '../../../firebase/config';
 
 const ItemListContainer = ({greeting}) => {
 
@@ -21,7 +21,7 @@ useEffect(()=>{
         const obtenerProduct = new Promise ((accept, reject)=> {
             setTimeout(()=> {
             accept(productos)
-            }, 3000);
+            }, 4000);
         })
         
         try {
