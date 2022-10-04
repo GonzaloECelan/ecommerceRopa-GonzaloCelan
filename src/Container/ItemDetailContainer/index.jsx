@@ -1,9 +1,9 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import ItemDetail from '../../../components/ItemDetail'
-import { useParams } from 'react-router-dom'
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { doc, getDoc } from "firebase/firestore";
-import { db } from '../../../firebase/config';
+import { db } from '../../firebase/config';
+import ItemDetail from '../../components/ItemDetail';
 
 
 const ItemDetailContainer = () => {
@@ -48,6 +48,7 @@ if (docSnap.exists()) {
 
 
   return (
+  
     <ItemDetail product={detalleproducto}/>
     
   )

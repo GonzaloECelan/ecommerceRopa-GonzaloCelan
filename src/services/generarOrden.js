@@ -1,4 +1,4 @@
-//Función auxiliar para generar la orden.
+
 const ordenGenerada = (nombre, email, telefono, cart, total) => {
     return {
         buyer: {

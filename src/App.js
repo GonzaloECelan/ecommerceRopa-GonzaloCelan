@@ -2,16 +2,17 @@ import "./app.css";
 import "./components/NavBar";
 import { NavBar } from "./components/NavBar";
 
-import ItemDetailContainer from "./Container/ItemListContainer/ItemDetailContainer";
+import ItemDetailContainer from "./Container/ItemDetailContainer";
 
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
-import Cart from "./Container/ItemListContainer/Cart";
+
+import Cart from "./Container/Cart";
 import ShopProvides from "./Context/ShopProvides";
-import ItemListContainer from "./Container/ItemListContainer/ItemListContainer";
+import ItemListContainer from "./Container/ItemListContainer";
 import { useEffect } from "react";
 import algoritmoGuardadoAutomático from "./services/guardarProducto";
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { useContext } from 'react'
-import { Shop } from '../../../Context/ShopProvides';
+import { Shop } from '../../Context/ShopProvides';
 import { DataGrid } from '@mui/x-data-grid';
-import ordenGenerada from '../../../services/generarOrden';
+import ordenGenerada from '../../services/generarOrden';
 import { collection, addDoc, getDoc } from "firebase/firestore";
-import { db } from '../../../firebase/config';
+import { db } from '../../firebase/config';
 import { doc, updateDoc } from "firebase/firestore";
 
 
