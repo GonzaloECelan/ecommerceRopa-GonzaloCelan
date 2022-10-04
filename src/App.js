@@ -12,9 +12,18 @@ import {
 import Cart from "./Container/ItemListContainer/Cart";
 import ShopProvides from "./Context/ShopProvides";
 import ItemListContainer from "./Container/ItemListContainer/ItemListContainer";
+import { useEffect } from "react";
+import algoritmoGuardadoAutomático from "./services/guardarProducto";
+
+
 
 
 function App() {
+
+useEffect(()=>{
+  algoritmoGuardadoAutomático();
+},[]);
+
 
 
   return (

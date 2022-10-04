@@ -2,12 +2,43 @@ import React from 'react'
 import { useContext } from 'react'
 import { Shop } from '../../../Context/ShopProvides';
 import { DataGrid } from '@mui/x-data-grid';
+import ordenGenerada from '../../../services/generarOrden';
+import { collection, addDoc, getDoc } from "firebase/firestore";
+import { db } from '../../../firebase/config';
+import { doc, updateDoc } from "firebase/firestore";
+
 
 
 const Cart = ({}) => {
 
 
-  const {cart, removeItem, clearCart} = useContext(Shop);
+const handleBuy = async ()=>{
+  const importe = total();
+  const orden = ordenGenerada("Gonzalo", "gon_celan@hotmail.com", 2646270548, cart, importe);
+  console.log("compra usuario:", orden);
+  
+
+const docRef = await addDoc(collection(db, "Orders"),orden);
+
+cart.forEach(async (productoEncarrito)=>{
+  const productRef = doc(db, "Products", productoEncarrito.id);
+
+  const productSnap = await getDoc(productRef)
+
+  await updateDoc(productRef, {
+    stock: productSnap.data().stock - productoEncarrito.quantity,
+  });
+})
+
+
+
+
+  
+alert("Gracias por su compra");
+
+}
+
+  const {cart, removeItem, clearCart, total} = useContext(Shop);
 
 
 
@@ -57,6 +88,8 @@ const rows = [
         rowsPerPageOptions={[5]}
         
       />
+
+      <button onClick={handleBuy}>Confirmar compra</button>
     </div>
   );
 }

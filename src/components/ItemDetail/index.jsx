@@ -40,7 +40,7 @@ setQty(quantity);
     <span className='price'>${product.price}</span>
     <span className='more'>MAS VENDIDO</span>
     <span className='stock'>Stock disponible</span>
-    { !qty ? <ItemCount stock={10} initial={1} onAdd={addCart} /> : <button className='Finalizar' onClick={finalizarCompra}>Finalizar compra</button>}
+    { !qty ? <ItemCount stock={product.stock} initial={1} onAdd={addCart} /> : <button className='Finalizar' onClick={finalizarCompra}>Finalizar compra</button>}
   </div>
   
     
